@@ -1,0 +1,11 @@
+<div class="form-inline mb-3">
+  <div class="form-group m-1">
+    <label class="mr-2" for="">name of ingredient</label>
+    <input type="text" class="form-control" #ingredientNameInput>
+  </div>
+  <div class="form-group m-1">
+    <label class="mr-2" for="">amount</label>
+    <input type="number" class="form-control" #ingredientAmountInput>
+  </div>
+  <button class="btn btn-primary m-1" (click)="onAddIngredient()">Add</button>
+</div>
