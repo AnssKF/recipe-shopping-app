@@ -25,7 +25,7 @@ export class RecipesListComponent implements OnInit {
   }
 
   onAddNewRecipe(){
-    const recipe = new Recipe(this.recipeNameRef.nativeElement.value,this.recipeDescRef.nativeElement.value,this.recipeImgRef.nativeElement.value);
+    const recipe = new Recipe(this.recipeNameRef.nativeElement.value,this.recipeDescRef.nativeElement.value,this.recipeImgRef.nativeElement.value,[]);
     this.recipeService.addRecipe(recipe);
   }
 

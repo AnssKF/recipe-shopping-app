@@ -3,12 +3,14 @@
   <div class="card-body">
     <h5 class="card-title">{{recipe.name}}</h5>
     <p class="card-text">{{recipe.description}}</p>
+    <ul class="list-group pb-3">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ ingredient.name }} - {{ ingredient.amount }}</li>
+    </ul>
     <button class="btn btn-block btn-primary dropdown-toggle" href="#" [appDropdown]="dropDownMenu">
       Manage
     </button>
     <div class="dropdown-menu" #dropDownMenu>
-        <a class="dropdown-item" href="#">Edit</a>
-        <a class="dropdown-item" href="#">Delete</a>
+        <a class="dropdown-item" href="#" (click)="onAddToShoppingList()">Add to shopping list</a>
     </div>
   </div>
 </div>

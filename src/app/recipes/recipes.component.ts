@@ -11,7 +11,7 @@ import { RecipeService } from '../services/recipes/recipe.service';
 })
 export class RecipesComponent implements OnInit {
 
-  selectedRecipe: Recipe = new Recipe("no recipe selected", "...", "https://images.media-allrecipes.com/images/56589.png");
+  selectedRecipe: Recipe = new Recipe("no recipe selected", "...", "https://images.media-allrecipes.com/images/56589.png",[]);
 
   constructor(private recipeService:RecipeService) { }
 

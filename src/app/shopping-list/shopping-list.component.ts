@@ -7,7 +7,6 @@ import { ShoppinglistService } from '../services/shopping-list/shoppinglist.serv
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css'],
-  providers: [ShoppinglistService]
 })
 export class ShoppingListComponent implements OnInit {
 
