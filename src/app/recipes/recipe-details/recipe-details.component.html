@@ -6,11 +6,12 @@
     <ul class="list-group pb-3">
       <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ ingredient.name }} - {{ ingredient.amount }}</li>
     </ul>
-    <button class="btn btn-block btn-primary dropdown-toggle" href="#" [appDropdown]="dropDownMenu">
+    <button class="btn btn-block btn-primary dropdown-toggle" style="cursor: pointer;" [appDropdown]="dropDownMenu">
       Manage
     </button>
     <div class="dropdown-menu" #dropDownMenu>
-        <a class="dropdown-item" href="#" (click)="onAddToShoppingList()">Add to shopping list</a>
+        <a class="dropdown-item" style="cursor: pointer;" (click)="onAddToShoppingList()">Add to shopping list</a>
+        <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['edit']" >Edit</a>
     </div>
   </div>
 </div>

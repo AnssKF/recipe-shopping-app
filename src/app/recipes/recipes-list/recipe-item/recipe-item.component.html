@@ -1,4 +1,4 @@
-<a class="list-group-item" style="cursor:pointer;" (click)="onRecipeSelected()">
+<a class="list-group-item" style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" >
   <div class="media">
     <img class="mr-3" src="{{recipe.imgUrl}}" alt="Generic placeholder image" style="max-width:100px;">
     <div class="media-body">

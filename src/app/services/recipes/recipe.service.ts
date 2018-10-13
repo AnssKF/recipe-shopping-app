@@ -9,29 +9,31 @@ import { Ingredient } from '../../models/ingredient.model';
 })
 export class RecipeService {
 
-  recipeSelected = new EventEmitter<Recipe>();;
-
   private recipes: Recipe[] = [
     new Recipe('recipeName',
                 'recipeDesc',
                 'https://images.media-allrecipes.com/images/56589.png',
-                [new Ingredient('tomato',5),new Ingredient('potato',20)]),
+                [new Ingredient('tomato', 5), new Ingredient('potato', 20)]),
     new Recipe('recipeName1',
                 'recipeDesc1',
                 'https://images.media-allrecipes.com/images/56589.png',
-                [new Ingredient('meat',5),new Ingredient('bla',20)])
-  ]
+                [new Ingredient('meat', 5), new Ingredient('bla', 20)])
+  ];
 
   constructor() { }
 
 
-  getRecipes(){
+  getRecipes() {
     return this.recipes;
   }
 
-  addRecipe(recipe:Recipe){
+  getRecipeById(id: number) {
+    return this.recipes[id];
+  }
+
+  addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
   }
-  
+
 
 }
