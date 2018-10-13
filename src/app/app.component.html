@@ -1,15 +1,8 @@
-<app-header (ChangePageEvent)="currentView = $event"></app-header>
+<app-header></app-header>
 
 <div class="container">
 
-  <ng-template #recipesDefaultPage>
-    <app-recipes #recipesDefaultPage ></app-recipes>
-  </ng-template>
-
-
-  <app-shopping-list *ngIf="currentView==='shopping-list'; else recipesDefaultPage"></app-shopping-list>
-  
-
+  <router-outlet></router-outlet>
 
 </div>
 
