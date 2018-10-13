@@ -7,16 +7,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  /**
-   * Change page content event handler
-   */
-  @Output() ChangePageEvent = new EventEmitter<string>();
-
-  onChangePage(page:string){
-    this.ChangePageEvent.emit(page);
-  }
-
-
   constructor() { }
 
   ngOnInit() {
