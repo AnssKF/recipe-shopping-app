@@ -13,14 +13,14 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('ingredientAmountInput') ingredientAmountRef: ElementRef;
 
 
-  constructor(private shoppinglistService:ShoppinglistService) { }
+  constructor(private shoppinglistService: ShoppinglistService) { }
 
   ngOnInit() {
   }
 
-  onAddIngredient(){
+  onAddIngredient() {
     const ingredient = new Ingredient(this.ingredientNameRef.nativeElement.value , this.ingredientAmountRef.nativeElement.value);
-    this.shoppinglistService.newIngredient.emit(ingredient);
+    this.shoppinglistService.newIngredient.next(ingredient);
   }
 
 }
