@@ -1,5 +1,6 @@
 <app-shopping-edit></app-shopping-edit>
 
 <ul class="list-group w-100">
-  <a style="cursor: pointer;" class="list-group-item" *ngFor="let ingredient of ingredientsList"> {{ingredient.name}} ({{ingredient.amount}}) </a>
+  <a  style="cursor: pointer;" class="list-group-item" 
+      *ngFor="let ingredient of ingredientsList; let i = index" (click)="onEditItem(i)"> {{ingredient.name}} ({{ingredient.amount}}) </a>
 </ul>
