@@ -1,16 +1,25 @@
-<div class="row">
-
-  <div class="col-md-8 mb-3">
-
-    <app-recipes-list></app-recipes-list>
-
-  </div>
 
 
-  <div class="col-md-4">
+    <div class="row" *ngIf="authService.isAuthenticated(); else login">
 
-    <router-outlet></router-outlet>
+        <div class="col-md-8 mb-3">
+      
+          <app-recipes-list></app-recipes-list>
+      
+        </div>
+      
+      
+        <div class="col-md-4">
+      
+          <router-outlet></router-outlet>
+      
+        </div>
+      
+      </div>
 
-  </div>
 
-</div>
+<ng-template #login>
+  <p class="display-4">You need to login</p>
+</ng-template>
+
+
