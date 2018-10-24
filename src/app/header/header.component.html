@@ -23,8 +23,8 @@
             Manage
           </a>
           <div class="dropdown-menu" #dropDownMenu>
-              <a class="dropdown-item" style="cursor: pointer;">Option1</a>
-              <a class="dropdown-item" style="cursor: pointer;">Option2</a>
+              <a class="dropdown-item" style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+              <a class="dropdown-item" style="cursor: pointer;" (click)="onGetData()">Get Data</a>
           </div>
         </li>
       </ul>
