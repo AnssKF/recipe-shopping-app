@@ -1,8 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { DataStorageService } from '../services/data-storage.service';
-import { Response } from '@angular/http';
-import { AuthService } from '../services/auth/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,26 +7,17 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dataStorageService: DataStorageService,
-              private authService: AuthService,
-              private router: Router) { }
+  /**
+   * Change page content event handler
+   */
+  @Output() ChangePageEvent = new EventEmitter<string>();
 
-  onSaveData() {
-    this.dataStorageService.storeRecipes()
-      .subscribe(
-        (response: Response) => {
-        }
-      )
+  onChangePage(page:string){
+    this.ChangePageEvent.emit(page);
   }
 
-  onGetData() {
-    this.dataStorageService.getRecipes();
-  }
 
-  onLogout(){
-    this.authService.logout();
-    this.router.navigate['/signin'];
-  }
+  constructor() { }
 
   ngOnInit() {
   }

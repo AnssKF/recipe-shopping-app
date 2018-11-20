@@ -1,27 +1,13 @@
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
-
-import { AuthGuard } from './services/auth/auth-guard.service';
-
-import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
+import { HomeComponent } from './core/home/home.component';
 
 const appRoutes: Routes = [
-  { path: '' , redirectTo: '/recipes', pathMatch: 'full' },
-  { path: 'recipes' , component: RecipesComponent, children: [
-    { path: '', component: RecipeStartComponent, canActivate:[AuthGuard]},
-    { path: 'new', component: RecipeEditComponent },
-    { path: ':id', component: RecipeDetailsComponent },
-    { path: ':id/edit', component: RecipeEditComponent },
-  ] },
+  { path: '' , component: HomeComponent },
+  { path: 'recipes', loadChildren:'./recipes/recipes.module#RecipesModule'},
   { path: 'shopping-list' , component: ShoppingListComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent },
 ];
 
 
